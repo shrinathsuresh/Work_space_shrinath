@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Cards</title>
+<style>
+  #about-us {
+    padding: 40px;
+    text-align: center;
+  }
+  
+  .about-info h1 {
+    color: #ffffff;
+    font-size: 24px;
+    padding-top: 20px;
+  }
+  
+  #about-us p {
+    font-size: 16px;
+    padding-top: 10px;
+    color: #ffffff;
+  }
+  
+  .container2 {
+    max-width: 80%;
+    margin: 0 auto;
+    background-color: #000000;
+    border-radius: 15px;
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.07);
+    padding: 20px;
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Distribute items evenly along the main axis */
+    flex-wrap: wrap; /* Allow items to wrap */
+  }
+  
+  .about-info {
+    flex: 1; /* Take up remaining space */
+    text-align: center; /* Center align content */
+    margin-bottom: 20px; /* Add margin to bottom */
+  }
+
+  
+  .about-info img {
+    max-width: 100px; /* Adjust image size */
+    margin-right: 20px; /* Add some spacing between image and text */
+  }
+  
+  .contact-info {
+    color: #ffffff;
+    text-align: center; /* Center align content */
+    flex: 1; /* Take up remaining space */
+    margin-top: 20px; /* Add margin to top */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align items horizontally */
+  }
+  .contact-info h2{
+    margin-bottom: 10px; /* Add margin below heading */
+    writing-mode: vertical-rl; /* Vertical writing mode */
+  }
+  .contact-info a {
+    text-decoration: none;
+    color: #ffffff;
+    margin-bottom: 5px; /* Adjust margin */
+    display: block; /* Display links as block elements */
+    writing-mode: vertical-rl; /* Vertical writing mode */
+  }
+  
+  .contact-info a i {
+    margin-right: 5px;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .container2 {
+      justify-content: flex-start; /* Align items to the start on larger screens */
+    }
+    .contact-info {
+      text-align: right; /* Right align content on larger screens */
+    }
+    .contact-info h2 {
+      transform: none; /* Remove rotation on larger screens */
+      writing-mode: horizontal-tb; /* Reset writing mode */
+    }
+    .contact-info a {
+      writing-mode: horizontal-tb; /* Reset writing mode */
+    }
+  }
+</style>
+</head>
+<body>
+  <section id="about-us">
+    <div class="container2">
+      <div class="about-info">
+        <h1>About Us</h1>
+        <p>Welcome to Workspace,This platform is to integrate the developing platforms in a single webpage for easy attraction</p>
+      </div>
+      
+      <div class="contact-info" id="contact-info">
+        <h2>Contact Info</h2>
+        <a href="mailto:programmer@example.com"><i class="fas fa-envelope"></i> Workspace.com</a>
+        <a href="https://www.instagram.com/programmer"><i class="fab fa-instagram"></i> Workspace121</a>
+        <a href="https://www.linkedin.com/in/programmer"><i class="fab fa-linkedin"></i> Workspacen</a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
