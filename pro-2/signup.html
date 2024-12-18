@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="signup.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="wrap">
+        <form action="processform.php" method="post" onsubmit="return validateForm()">
+            <h1>SignUp</h1>
+            <div class="inputbox">
+                <div class="inputfield">
+                    <input type="text" placeholder="First Name" name="FirstName" required>
+                    <i class='bx bxs-user-circle'></i>
+                </div>
+                <div class="inputfield">
+                    <input type="text" placeholder="Last Name" name="LastName" required>
+                    <i class='bx bxs-user-circle'></i>
+                </div>
+            </div>
+            <div class="inputbox">
+                <div class="inputfield">
+                    <input type="email" placeholder="Email id" name="Emailid" required>
+                    <i class='bx bxs-envelope'></i>
+                </div>
+                <div class="inputfield">
+                    <input type="number" placeholder="Phone Number" name="PhoneNumber" required>
+                    <i class='bx bxs-phone'></i>
+                </div>
+            </div>
+            <div class="inputbox">
+                <div class="inputfield">
+                    <input type="password" placeholder="Password" id="password" name="Password" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <div class="inputfield">
+                    <input type="password" placeholder="Confirm Password" id="confirm_password" name="ConfirmPassword" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+            </div>
+            <label><input type="checkbox" required> I hereby declare that the above information provided is true and correct.</label>
+            <button type="submit" class="btn">SignUp</button>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirm_password").value;
+
+            // Password complexity validation
+            var complexityRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/;
+            if (!complexityRegex.test(password)) {
+                alert("Password must contain at least one uppercase letter, one lowercase letter, one number, one special character, and be at least 8 characters long.");
+                return false;
+            }
+
+            // Check if passwords match
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
