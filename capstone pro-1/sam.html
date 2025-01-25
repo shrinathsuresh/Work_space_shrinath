@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invisible Glass with Blur</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('https://source.unsplash.com/random/1920x1080') no-repeat center center/cover;
+            font-family: Arial, sans-serif;
+            background-color: rgb(253, 243, 243);
+        }
+
+        .glass-container {
+            width: 200px;
+            padding: 20px;
+            background: linear-gradient(123deg,rgba(255,255,255,0.1),rgba(255,255,255,0)); /* Very light transparent background */
+            backdrop-filter: blur(10px); /* Blurs the background behind the container */
+            -webkit-backdrop-filter: blur(10px); /* Safari compatibility */
+            border-radius: 15px; /* Rounded corners */
+            border: 1px solid rgba(255, 255, 255, 0.18); /* Subtle border for structure */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Depth shadow */
+            color: rgb(18, 17, 17);
+            text-align: center;
+        }
+
+        .glass-container img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%; /* Circular profile picture */
+            border: 3px solid rgba(255, 255, 255, 0.5); /* Subtle border for the image */
+            margin-bottom: 15px;
+        }
+
+        .glass-container h2 {
+            margin: 10px 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .glass-container p {
+            font-size: 16px;
+            margin: 10px 0 20px;
+        }
+
+        .glass-container button {
+            background: rgba(255, 255, 255, 0.3);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .glass-container button:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+  <div class="single">
+    <section id="intro" class="intro">
+      <div class="contain">
+        <img src="./img/profile.png" alt="profile">
+        <p> I am an aspiring <span>Frontend developer</span> boosting my technincal skills in MERN stack. Acomplishing new insites and coodinating with my Engineering Degree.</p>
+    <!--
+        <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+        <h2 class="fw-normal">Heading</h2>
+        <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
+        <p><a class="btn btn-secondary" href="#">View details »</a></p>
+      </div>
+      -->
+      </div>
+     
+  </section>
+    <section id="Skills" class="skill">
+      <div class="double">
+        <div class="container">
+          <div class="seg1">
+            <h3>Technical Skills</h3>
+            <ul>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>Python</li>
+              <li>Java</li>
+            </ul>
+          </div>
+          <div class="seg2">
+            <h3>Soft Skills</h3>
+            <ul>
+              <li>Problem solving</li>
+              <li>Communication</li>
+              <li>Teamwork</li>
+              <li>Adaptability</li>
+              <li>Creativity</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+    </section>
+  </div> 
+  
+</body>
+</html>

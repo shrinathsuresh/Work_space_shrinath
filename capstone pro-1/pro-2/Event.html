@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Event</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: "Poppins",sans-serif;
+          scroll-behavior: smooth;
+      }
+      body {
+        background-color: aliceblue;
+        margin-left: 40px;
+      }
+      .card-img-top {
+        border-radius: 50px;
+        padding: 20px;
+        height: 200px; /* Set a fixed height for all images */
+        object-fit: cover; /* Ensure images cover the area without stretching */
+        width: 100%; /* Ensure images take the full width of the container */
+      }
+      .card11 {
+        border-radius: 30px;
+        box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.07);
+        background-color: #ffffff;
+        max-width: 350px;
+        max-height: 700px; /* Set a maximum width for the cards */
+        margin: auto; /* Center the cards horizontally */
+      }
+      .card-title{
+        padding-bottom: 10px;
+      }
+      .card-body {
+        padding: 25px;
+        margin-top: -15px;
+      }
+      .btn-primary {
+        border-radius: 50px;
+        width: 120px;
+        background-color: #000;
+        color: #ffffff;
+      }
+      .btn-primary:hover {
+        background-color: #f0efef;
+        color: #000;
+      }
+      .card-body h5 {
+        color: rgb(22, 188, 188);
+      }
+      .button-container {
+        display: flex;
+        justify-content: flex-end; /* Align button to the right */
+      }
+      .container{
+    position: relative;
+    width: 1100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px;
+    margin-top: 8%;
+}
+.container .card{
+    width: 308px;
+    position: relative;
+    height: 350px;
+    background: #f0f0f0;
+    margin: 30px 10px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow:0.5px 10px #e6e6e6e6 ;
+    transition: 0.3s ease-in-out;
+    margin-top: 5%;
+}
+.container .card .imgbx{
+    position: relative;
+    width: 260px;
+    height: 260px;
+    top: -60px;
+    left: 10px;
+    box-shadow:0 5px 20px rbga(0,0,0,1.2) ;
+    object-fit: cover;
+}
+.container .card .imgbx img{
+    max-width: 100%;
+    border-radius: 10px;
+}
+.imgbx:hover img{
+    transform:  scale(1.1);
+}
+.btn-box{
+    background-color: black;
+    color: #ffffff;
+    padding: 5px 20px;
+    margin-top: 100%;
+    text-decoration: none;
+    border-radius: 10px;
+   
+    
+}
+.btn-box :hover{
+    color: black;
+    background:#ffffff;
+    border-radius: 7px;
+    transition: background 0.5s;
+  }
+
+#sidenav{
+  width: 190px;
+  height: 70%;
+  position: fixed;
+  right: -250px;
+  top: 70px;
+  background: #ffffff;
+  border-radius: 5px;
+  z-index: 2;
+  transition: 0.5s;
+}
+nav ul li{
+  list-style: none;
+  margin: 50px 20px;
+}
+nav ul li a{
+  text-decoration: none;
+  color: black;
+}
+#menubtn{
+  width: 40px;
+  height: 0px;
+  background-color:#000000;
+  text-align: center;
+  position: fixed;
+  right:30px;
+  top: 5px;
+  border-radius: 3px;
+  z-index: 3;
+  cursor: pointer;
+}
+#menubtn img{
+  width: 40px;
+  height: 35px;
+  margin-top: 15px;
+  background-color: none;
+}
+
+    </style>
+  </head>
+  <body>
+     <!--slider sec-->
+     <div id="sidenav">
+      <nav>
+          <ul>
+            
+            <li><a href="Pro2.html"><i class="fa-solid fa-house"></i>  home</a></li>
+            <li><a href="login.html"><i class="fa-solid fa-user-lock"></i>  login</a></li>
+            <li><a href="event.html"><i class="fa-solid fa-calendar-xmark"></i>  Event</a></li>
+            <li><a href="#"><i class="fa-solid fa-handshake-angle"></i> help</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div id ="menubtn">
+        <img src="menu2.png" id="menu">
+      </div>
+      <script>
+        var menubtn = document.getElementById("menubtn")
+        var sidenav = document.getElementById("sidenav")
+        var menu = document.getElementById("menu")
+        sidenav.style.right=="-250px";
+        menubtn.onclick = function(){
+          if(sidenav.style.right=="-250px"){
+            sidenav.style.right="0";
+          }
+          else{
+            sidenav.style.right="-250px";
+          }
+        }
+      </script>
+      
+    </div>
+    <div class="contain">
+      <h1 class="text-center">Technical Events</h1>
+      
+      <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
+        <!--one-->
+        <div class="col">
+          <div class="card11">
+            <img src="ceg.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">CEG Engineering College</h5>
+              <p class="card-text">Event: Technoplaza<br> Date:24-08-2024.</p>
+              <div class="button-container mb-3">
+                <button class="btn btn-primary">Know more</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--two-->
+        <div class="col">
+          <div class="card11">
+            <img src="cit.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">CIT Engineering College</h5>
+              <p class="card-text">Event: REVIL<br> Date:11-08-2024.</p>
+              <div class="button-container mb-3">
+                <button class="btn btn-primary">Know more</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--three-->
+        <div class="col">
+          <div class="card11">
+            <img src="rit.jpeg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">RIT Engineering College</h5>
+              <p class="card-text">Event: BOT-ONE<br> Date:28-07-2024.</p>
+              <div class="button-container mb-3">
+                <button class="btn btn-primary">Know more</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div>
+      <!--row2-->
+      <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
+        <!--one-->
+        <div class="col">
+          <div class="card11">
+            <img src="srm.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">SRM Engineering College</h5>
+              <p class="card-text">Event: TechSaprkale<br> Date:17-07-2024.</p>
+              <div class="button-container mb-3">
+                <button class="btn btn-primary">Know more</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--two-->
+        <div class="col">
+          <div class="card11">
+            <img src="saveetha.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Saveetha Engineering College</h5>
+              <p class="card-text">Event: PointBreaker<br> Date:27-08-2024.</p>
+              <div class="button-container mb-3">
+                <button class="btn btn-primary">Know more</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--three-->
+        <div class="col">
+          <div class="card11">
+            <img src="sairam.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Sairam Engineering College</h5>
+              <p class="card-text">Event: Electron<br> Date:16-08-2024.</p>
+              <div class="button-container mb-3">
+                <button class="btn btn-primary">Know more</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--row-->
+        
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
